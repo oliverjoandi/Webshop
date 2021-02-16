@@ -1,0 +1,19 @@
+.navbar {
+    background-color: rgb(66, 51, 207);
+    height: 100px;
+    text-align: center;
+}
+
+.navbar img {
+    height: 100px;
+    width: 200px;
+}
+
+.footer {
+    border-top: 1px solid black;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
+}

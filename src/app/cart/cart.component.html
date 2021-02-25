@@ -1,1 +1,8 @@
 <p>OLEN OSTUKORVIS</p>
+<div class="items" *ngFor="let item of cartItems; let i = index">
+    <div>{{item.title}}</div>
+    <div>{{item.price}}</div>
+    <div>{{item.category}}</div>
+    <img src="{{item.imgSrc}}">
+    <div (click)="onDeleteFromCart(i)">X</div>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from '../models/item.model';
+import { CartService } from './cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  cartItems: Item[] = [];
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
+  // kui minnakse HTML siis pannakse ngOnInIt käima
   ngOnInit(): void {
-    console.log("cart componendis")
+    console.log(this.cartService.cartItems);
+    // vasakul saab väärtust, paremal annab väärtust
+    this.cartItems = this.cartService.cartItems;
+  }
+
+  onDeleteFromCart(i: number) {
+    this.cartService.cartItems.splice(i,1)
   }
 }
+

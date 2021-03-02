@@ -1,8 +1,19 @@
 <p>OLEN OSTUKORVIS</p>
+<div (click)="onEmptyCart()" *ngIf="cartItems.length > 0 ">Tühjenda ostukorv</div>
+
 <div class="items" *ngFor="let item of cartItems; let i = index">
     <div>{{item.title}}</div>
     <div>{{item.price}}</div>
     <div>{{item.category}}</div>
     <img src="{{item.imgSrc}}">
     <div (click)="onDeleteFromCart(i)">X</div>
+</div>
+
+
+
+<div class="sum-of-cart" *ngIf="cartItems.length > 0 ">SUMMA: {{ sumOfCart.toFixed(2) }} €</div>
+
+<div class="empty-cart" *ngIf="cartItems.length == 0">
+    <img src="\assets\shopping-cart.svg">
+    <div>Ostukorv on tühi</div>
 </div>

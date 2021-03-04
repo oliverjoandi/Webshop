@@ -9,3 +9,7 @@ body {
 * {font-family: 'Poppins', sans-serif;
     outline: none;
 }
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}

@@ -8,13 +8,13 @@ import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path: " ", component: HomeComponent },
+  {path: "", component: HomeComponent },
   {path: "cart", component: CartComponent },
   {path: "admin", component: AdminHomeComponent },
   {path: "admin/add-item", component: AddItemComponent },
   {path: "admin/edit-item/:itemId", component: EditItemComponent },
-  {path: "admin/view-item", component: ViewItemsComponent },
-  {path: "**", redirectTo: " "},
+  {path: "admin/view-items", component: ViewItemsComponent },
+  // {path: "**", redirectTo: " "},
 ];
 
 @NgModule({

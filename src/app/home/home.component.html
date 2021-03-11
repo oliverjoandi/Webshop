@@ -1,5 +1,16 @@
-<p>home works!</p>
-<div class="item" *ngFor="let item of items">
+<p>home works!</p> <button routerLink="admin">Admin</button><br>
+<br><br>
+
+<br>
+<div class="filter-bar">
+    <div>Järjesta</div>
+    <div (click)="onSortPrice()">Hinna alusel</div>
+    <div (click)="onSortTitle()">Tähestiku järgi</div>
+</div>
+<br>
+<br>
+
+<div class="item" *ngFor="let item of itemsShown">
     <div>{{ item.title }}</div>
     <div>{{ item.price }}</div>
     <div>{{ item.category }}</div>

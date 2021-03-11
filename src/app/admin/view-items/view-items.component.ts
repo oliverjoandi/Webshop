@@ -13,17 +13,18 @@ items: Item[] = [];
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
-    this.itemService.getItemsFromDatabase().subscribe(itemsFromDatabase => {
-      this.items = itemsFromDatabase;
-      this.itemService.items = itemsFromDatabase;
+        this.itemService.getItemsFromDatabase().subscribe(itemsFromDatabase => {
+      for (const key in itemsFromDatabase) {
+         const element = itemsFromDatabase[key];
+         this.items.push(element)
+      }
     });
-    // this.items = this.itemService.items;
- 
-}
+  }
+
 
   onDeleteItem(i: number) {
     alert("oled kustutamas!");
     this.itemService.items.splice(i,1);
-    this.itemService.saveItemsToDatabase();
+    // this.itemService.saveItemsToDatabase();
   }
 }
